@@ -1,0 +1,15 @@
+# NetBeans private user-specific files
+/parkingCoto/nbproject/private/
+/parkingCoto/nbbuild/
+/parkingCoto/dist/
+
+# Compiled Java files
+*.class
+
+# IDE/build output
+/parkingCoto/build/
+/parkingCoto/dist/
+
+# Maven leftovers
+/parkingSystem/target/
+/parkingSystemProject/target/
