@@ -1,18 +1,12 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package parking.domain.exception;
-
-/**
- *
- * @author Laboratorio_M
- */
 
 /**
  * Thrown when a vehicle attempts to check in while it already has an
  * {@code ACTIVE} ticket open (assignment rule: "a vehicle cannot have
  * two active tickets").
+ * 
+ * @author Keilor MC
+ * @author Randall AC
  */
 public class VehicleWithActiveTicketException extends BusinessException {
 
@@ -27,4 +21,3 @@ public class VehicleWithActiveTicketException extends BusinessException {
         super("Vehicle " + plate + " already has an active ticket");
     }
 }
-

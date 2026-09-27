@@ -1,18 +1,9 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package parking.application.usecase;
+
 import parking.domain.model.Vehicle;
 import parking.domain.repository.VehicleRepository;
+
 import java.util.List;
-
-/**
- *
- * @author Laboratorio_M
- */
-
-
 
 /**
  * Lists every vehicle ever registered in the system, regardless of
@@ -20,6 +11,9 @@ import java.util.List;
  * <p>
  * Contrast with {@link ListVehiclesInsideUseCase}, which only returns
  * vehicles that are currently inside the lot (active ticket).
+ * 
+ * @author Keilor MC
+ * @author Randall AC
  */
 public class ListRegisteredVehiclesUseCase {
 
@@ -39,4 +33,3 @@ public class ListRegisteredVehiclesUseCase {
         return vehicleRepository.findAll();
     }
 }
-

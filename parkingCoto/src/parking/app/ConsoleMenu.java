@@ -1,8 +1,5 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
-package parkingcoto;
+package parking.app;
+
 import parking.domain.exception.BusinessException;
 import parking.domain.model.*;
 
@@ -11,20 +8,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 import java.util.Scanner;
-
-import java.time.LocalDateTime;
-import java.util.List;
-import java.util.Map;
-import java.util.Optional;
-import java.util.Scanner;
-
-/**
- *
- * @author Laboratorio_M
- */
-
-
-
 
 /**
  * Interactive, text-based menu that lets a real user operate the
@@ -39,10 +22,13 @@ import java.util.Scanner;
  * {@link BusinessException} thrown by those use cases is caught here
  * and shown to the user as a friendly message instead of crashing the
  * program.
+ * 
+ * @author Keilor MC
+ * @author Randall AC
  */
 public class ConsoleMenu {
 
-    private final parkingSystem system;
+    private final ParkingSystem system;
     private final Scanner scanner;
 
     /**
@@ -51,7 +37,7 @@ public class ConsoleMenu {
      * @param system  the wired use cases the menu will delegate to
      * @param scanner the input source to read the user's choices from
      */
-    public ConsoleMenu(parkingSystem system, Scanner scanner) {
+    public ConsoleMenu(ParkingSystem system, Scanner scanner) {
         this.system = system;
         this.scanner = scanner;
     }
@@ -93,9 +79,11 @@ public class ConsoleMenu {
                 // Every business rule violation lands here, already as a
                 // human-readable message thrown by the domain/application
                 // layers; the menu just displays it and keeps running.
-                System.out.println("Could not complete the operation: " + e.getMessage());
+                System.out.println("Could not complete the operation: " +
+                        e.getMessage());
             } catch (NumberFormatException e) {
-                System.out.println("That doesn't look like a valid number. Try again.");
+                System.out.println("That doesn't look like a valid number. "
+                        + "Try again.");
             }
             System.out.println();
         }
@@ -169,12 +157,13 @@ public class ConsoleMenu {
         String plate = readLine("Vehicle plate: ");
         Optional<Vehicle> vehicle = system.getVehicleByPlate.execute(plate);
         if (vehicle.isEmpty()) {
-            System.out.println("There is no vehicle registered with plate " + plate
-                    + ". Register it first (option 1).");
+            System.out.println("There is no vehicle registered with plate " +
+                    plate + ". Register it first (option 1).");
             return;
         }
 
-        ParkingTicket ticket = system.checkInVehicle.execute(vehicle.get(), LocalDateTime.now());
+        ParkingTicket ticket = system.checkInVehicle.execute(vehicle.get(),
+                LocalDateTime.now());
         System.out.println("Entry registered. Ticket #" + ticket.getNumber()
                 + " - space " + ticket.getSpace().getNumber()
                 + " - entry time: " + ticket.getEntryTime());
@@ -197,15 +186,19 @@ public class ConsoleMenu {
     private void checkOut() {
         System.out.println("-- Register vehicle exit --");
         String plate = readLine("Vehicle plate: ");
-        ParkingTicket ticket = system.checkOutVehicle.execute(plate, LocalDateTime.now());
+        ParkingTicket ticket = system.checkOutVehicle.execute(plate,
+                LocalDateTime.now());
 
         long minutes = ticket.getStayInMinutes();
         long billableHours = TimeUtil.billableHours(minutes);
 
-        System.out.println("Exit registered for ticket #" + ticket.getNumber() + ".");
-        System.out.println("Stay time: " + minutes + " minute(s) -> " + billableHours + " billable hour(s).");
+        System.out.println("Exit registered for ticket #" +
+                ticket.getNumber() + ".");
+        System.out.println("Stay time: " + minutes + " minute(s) -> " +
+                billableHours + " billable hour(s).");
         System.out.println("Amount due: " + ticket.getAmount()
-                + " (pending payment - use option 7 with ticket #" + ticket.getNumber() + ").");
+                + " (pending payment - use option 7 with ticket #" +
+                ticket.getNumber() + ").");
     }
 
     // ---------- 7. Register payment ----------
@@ -213,14 +206,16 @@ public class ConsoleMenu {
     private void registerPayment() {
         System.out.println("-- Register payment --");
         int ticketNumber = readInt("Ticket number: ");
-        Optional<ParkingTicket> ticket = system.getTicketByNumber.execute(ticketNumber);
+        Optional<ParkingTicket> ticket = system.getTicketByNumber.execute(
+                ticketNumber);
         if (ticket.isEmpty()) {
             System.out.println("There is no ticket #" + ticketNumber + ".");
             return;
         }
 
         PaymentType paymentType = readPaymentType();
-        Payment payment = system.registerPayment.execute(ticket.get(), paymentType, LocalDateTime.now());
+        Payment payment = system.registerPayment.execute(ticket.get(),
+                paymentType, LocalDateTime.now());
         System.out.println("Payment registered: " + payment);
     }
 
@@ -228,7 +223,8 @@ public class ConsoleMenu {
 
     private void showTotalRevenue() {
         System.out.println("-- Total revenue --");
-        System.out.println("Total revenue generated so far: " + system.getTotalRevenue.execute());
+        System.out.println("Total revenue generated so far: " +
+                system.getTotalRevenue.execute());
     }
 
     // ---------- 9. Active tickets ----------
@@ -250,7 +246,8 @@ public class ConsoleMenu {
         Map<SpaceType, long[]> occupancy = system.getOccupancyByType.execute();
         occupancy.forEach((type, counts) ->
                 System.out.println("  " + type + " -> available: " + counts[0]
-                        + ", occupied: " + counts[1] + ", out of service: " + counts[2]));
+                        + ", occupied: " + counts[1] + ", out of service: " +
+                        counts[2]));
     }
 
     // ---------- 11. Registered vehicles ----------
@@ -298,7 +295,8 @@ public class ConsoleMenu {
 
     private SpaceType readVehicleType() {
         while (true) {
-            System.out.println("Vehicle type: 1) Car  2) Motorcycle  3) Cargo vehicle");
+            System.out.println("Vehicle type: 1) Car  2) Motorcycle  "
+                    + "3) Cargo vehicle");
             String choice = readLine("Choose: ").trim();
             switch (choice) {
                 case "1": return SpaceType.CAR;

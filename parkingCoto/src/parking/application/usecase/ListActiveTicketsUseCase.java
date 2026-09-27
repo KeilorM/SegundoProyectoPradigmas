@@ -1,20 +1,15 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package parking.application.usecase;
+
 import parking.domain.model.ParkingTicket;
 import parking.domain.repository.ParkingTicketRepository;
 
 import java.util.List;
-/**
- *
- * @author Laboratorio_M
- */
-
 
 /**
  * Lists every currently active ticket.
+ * 
+ * @author Keilor MC
+ * @author Randall AC
  */
 public class ListActiveTicketsUseCase {
 
@@ -34,4 +29,3 @@ public class ListActiveTicketsUseCase {
         return ticketRepository.findActive();
     }
 }
-

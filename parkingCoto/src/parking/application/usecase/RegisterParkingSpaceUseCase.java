@@ -1,18 +1,13 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package parking.application.usecase;
+
 import parking.domain.model.ParkingSpace;
 import parking.domain.repository.ParkingSpaceRepository;
-/**
- *
- * @author Laboratorio_M
- */
-
 
 /**
  * Registers a new physical space in the parking lot.
+ * 
+ * @author Keilor MC
+ * @author Randall AC
  */
 public class RegisterParkingSpaceUseCase {
 
@@ -36,4 +31,3 @@ public class RegisterParkingSpaceUseCase {
         spaceRepository.save(space);
     }
 }
-

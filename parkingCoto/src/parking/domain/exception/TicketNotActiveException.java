@@ -1,17 +1,11 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package parking.domain.exception;
-
-/**
- *
- * @author Laboratorio_M
- */
 
 /**
  * Thrown when attempting to register an exit for a vehicle that has no
  * currently active ticket.
+ * 
+ * @author Keilor MC
+ * @author Randall AC
  */
 public class TicketNotActiveException extends BusinessException {
 
@@ -26,4 +20,3 @@ public class TicketNotActiveException extends BusinessException {
         super("There is no active ticket for vehicle " + plate);
     }
 }
-
