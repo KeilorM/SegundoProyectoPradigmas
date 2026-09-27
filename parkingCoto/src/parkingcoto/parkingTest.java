@@ -31,7 +31,7 @@ import java.util.List;
  * end prints a summary that can be pasted directly into the report's
  * test table.
  */
-public class parkingTests {
+public class parkingTest {
 
     private static int total = 0;
     private static int passed = 0;
@@ -73,7 +73,7 @@ public class parkingTests {
     // ---------- Entry cases ----------
 
     private static void test1CarEntry() {
-        ParkingSystem system = new ParkingSystem();
+        parkingSystem system = new parkingSystem();
         system.registerParkingSpace.execute(new ParkingSpace("A-1", SpaceType.CAR));
         Vehicle v = new Car("AAA111", "Toyota", "Corolla", "Red");
         system.registerVehicle.execute(v);
@@ -84,7 +84,7 @@ public class parkingTests {
     }
 
     private static void test2MotorcycleEntry() {
-        ParkingSystem system = new ParkingSystem();
+        parkingSystem system = new parkingSystem();
         system.registerParkingSpace.execute(new ParkingSpace("M-1", SpaceType.MOTORCYCLE));
         Vehicle v = new Motorcycle("MOT111", "Honda", "CB190", "Black");
         system.registerVehicle.execute(v);
@@ -95,7 +95,7 @@ public class parkingTests {
     }
 
     private static void test3CargoEntry() {
-        ParkingSystem system = new ParkingSystem();
+        parkingSystem system = new parkingSystem();
         system.registerParkingSpace.execute(new ParkingSpace("C-1", SpaceType.CARGO));
         Vehicle v = new CargoVehicle("CAR111", "Freightliner", "M2", "White");
         system.registerVehicle.execute(v);
@@ -108,7 +108,7 @@ public class parkingTests {
     // ---------- Invalid assignment cases ----------
 
     private static void test4OccupiedSpace() {
-        ParkingSystem system = new ParkingSystem();
+        parkingSystem system = new parkingSystem();
         ParkingSpace space = new ParkingSpace("A-1", SpaceType.CAR);
         space.occupy(); // already occupied beforehand
         Vehicle v = new Car("BBB222", "Kia", "Rio", "Blue");
@@ -125,7 +125,7 @@ public class parkingTests {
     }
 
     private static void test5OutOfServiceSpace() {
-        ParkingSystem system = new ParkingSystem();
+        parkingSystem system = new parkingSystem();
         ParkingSpace space = new ParkingSpace("A-2", SpaceType.CAR);
         space.markOutOfService();
         Vehicle v = new Car("CCC333", "Nissan", "Sentra", "Gray");
@@ -142,7 +142,7 @@ public class parkingTests {
     }
 
     private static void test6IncompatibleSpace() {
-        ParkingSystem system = new ParkingSystem();
+        parkingSystem system = new parkingSystem();
         ParkingSpace space = new ParkingSpace("M-2", SpaceType.MOTORCYCLE);
         Vehicle v = new Car("DDD444", "Mazda", "3", "Black");
 
@@ -158,7 +158,7 @@ public class parkingTests {
     }
 
     private static void test7VehicleWithActiveTicket() {
-        ParkingSystem system = new ParkingSystem();
+        parkingSystem system = new parkingSystem();
         system.registerParkingSpace.execute(new ParkingSpace("A-1", SpaceType.CAR));
         system.registerParkingSpace.execute(new ParkingSpace("A-2", SpaceType.CAR));
         Vehicle v = new Car("EEE555", "Hyundai", "Tucson", "White");
@@ -215,7 +215,7 @@ public class parkingTests {
     // ---------- Closing, payment and query cases ----------
 
     private static void test12CorrectTicketClosing() {
-        ParkingSystem system = new ParkingSystem();
+        parkingSystem system = new parkingSystem();
         system.registerParkingSpace.execute(new ParkingSpace("A-1", SpaceType.CAR));
         Vehicle v = new Car("JJJ000", "Renault", "Logan", "Red");
         system.registerVehicle.execute(v);
@@ -229,7 +229,7 @@ public class parkingTests {
     }
 
     private static void test13CorrectPayment() {
-        ParkingSystem system = new ParkingSystem();
+        parkingSystem system = new parkingSystem();
         system.registerParkingSpace.execute(new ParkingSpace("A-1", SpaceType.CAR));
         Vehicle v = new Car("KKK111", "Fiat", "Cronos", "White");
         system.registerVehicle.execute(v);
@@ -244,7 +244,7 @@ public class parkingTests {
     }
 
     private static void test14SpaceRelease() {
-        ParkingSystem system = new ParkingSystem();
+        parkingSystem system = new parkingSystem();
         ParkingSpace space = new ParkingSpace("A-1", SpaceType.CAR);
         system.registerParkingSpace.execute(space);
         Vehicle v = new Car("LLL222", "Peugeot", "208", "Black");
@@ -257,7 +257,7 @@ public class parkingTests {
     }
 
     private static void test15TotalRevenue() {
-        ParkingSystem system = new ParkingSystem();
+        parkingSystem system = new parkingSystem();
         system.registerParkingSpace.execute(new ParkingSpace("A-1", SpaceType.CAR));
         system.registerParkingSpace.execute(new ParkingSpace("M-1", SpaceType.MOTORCYCLE));
 

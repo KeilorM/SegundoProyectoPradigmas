@@ -13,7 +13,6 @@ import parking.domain.repository.ParkingTicketRepository;
 
 import java.time.LocalDateTime;
 
-import java.time.LocalDateTime;
 /**
  *
  * @author Laboratorio_M

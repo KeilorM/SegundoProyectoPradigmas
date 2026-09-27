@@ -7,7 +7,6 @@ import parking.domain.model.ParkingSpace;
 import parking.domain.model.SpaceType;
 import parking.domain.repository.ParkingSpaceRepository;
 import java.util.List;
-import java.util.List;
 
 /**
  *

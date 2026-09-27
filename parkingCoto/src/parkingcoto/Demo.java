@@ -37,7 +37,7 @@ public class Demo {
      * @param args not used
      */
     public static void main(String[] args) {
-        ParkingSystem system = new ParkingSystem();
+        parkingSystem system = new parkingSystem();
 
         // ---------- 1. Parking spaces ----------
         section("1. Registering parking spaces");

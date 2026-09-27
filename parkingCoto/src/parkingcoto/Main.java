@@ -32,7 +32,7 @@ public class Main {
      */
     public static void main(String[] args) {
         try (Scanner scanner = new Scanner(System.in)) {
-            ParkingSystem system = new ParkingSystem();
+            parkingSystem system = new parkingSystem();
             new ConsoleMenu(system, scanner).run();
         }
     }

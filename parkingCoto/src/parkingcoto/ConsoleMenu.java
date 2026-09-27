@@ -42,7 +42,7 @@ import java.util.Scanner;
  */
 public class ConsoleMenu {
 
-    private final ParkingSystem system;
+    private final parkingSystem system;
     private final Scanner scanner;
 
     /**
@@ -51,7 +51,7 @@ public class ConsoleMenu {
      * @param system  the wired use cases the menu will delegate to
      * @param scanner the input source to read the user's choices from
      */
-    public ConsoleMenu(ParkingSystem system, Scanner scanner) {
+    public ConsoleMenu(parkingSystem system, Scanner scanner) {
         this.system = system;
         this.scanner = scanner;
     }

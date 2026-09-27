@@ -7,8 +7,6 @@ import parking.domain.model.ParkingTicket;
 import parking.domain.repository.ParkingTicketRepository;
 
 import java.util.Optional;
-
-import java.util.Optional;
 /**
  *
  * @author Laboratorio_M

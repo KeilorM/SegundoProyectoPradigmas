@@ -6,7 +6,6 @@ package parking.application.usecase;
 import parking.domain.model.Vehicle;
 import parking.domain.repository.VehicleRepository;
 import java.util.Optional;
-import java.util.Optional;
 
 /**
  *
