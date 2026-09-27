@@ -1,19 +1,11 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package parking.application.usecase;
+
 import parking.domain.exception.IncompatibleSpaceException;
 import parking.domain.exception.SpaceOccupiedException;
 import parking.domain.exception.SpaceOutOfServiceException;
 import parking.domain.model.ParkingSpace;
 import parking.domain.model.SpaceStatus;
 import parking.domain.model.Vehicle;
-/**
- *
- * @author Laboratorio_M
- */
-
 
 /**
  * Validates, in isolation, whether one specific space could be assigned
@@ -24,6 +16,9 @@ import parking.domain.model.Vehicle;
  * exists so each individual assignment rule (occupied space, out of
  * service space, incompatible space) can be exercised and tested on its
  * own.
+ * 
+ * @author Keilor MC
+ * @author Randall AC
  */
 public class ValidateSpaceAssignmentUseCase {
 
@@ -42,7 +37,8 @@ public class ValidateSpaceAssignmentUseCase {
      * @param vehicle the candidate vehicle
      * @throws SpaceOutOfServiceException if the space is out of service
      * @throws SpaceOccupiedException     if the space is already occupied
-     * @throws IncompatibleSpaceException if the space's type does not match the vehicle's required type
+     * @throws IncompatibleSpaceException if the space's type does not match 
+     * the vehicle's required type
      */
     public void execute(ParkingSpace space, Vehicle vehicle) {
         if (space.getStatus() == SpaceStatus.OUT_OF_SERVICE) {
@@ -52,8 +48,8 @@ public class ValidateSpaceAssignmentUseCase {
             throw new SpaceOccupiedException(space.getNumber());
         }
         if (!space.isCompatibleWith(vehicle)) {
-            throw new IncompatibleSpaceException(space.getNumber(), vehicle.getPlate());
+            throw new IncompatibleSpaceException(space.getNumber(),
+                    vehicle.getPlate());
         }
     }
 }
-

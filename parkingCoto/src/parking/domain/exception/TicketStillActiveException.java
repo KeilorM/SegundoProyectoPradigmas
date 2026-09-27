@@ -1,17 +1,11 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package parking.domain.exception;
-
-/**
- *
- * @author Laboratorio_M
- */
 
 /**
  * Thrown when attempting to pay a ticket that has not been closed yet
  * (business rule: "an active ticket cannot be paid").
+ * 
+ * @author Keilor MC
+ * @author Randall AC
  */
 public class TicketStillActiveException extends BusinessException {
 
@@ -26,4 +20,3 @@ public class TicketStillActiveException extends BusinessException {
         super("Ticket #" + ticketNumber + " is still active, it cannot be paid");
     }
 }
-

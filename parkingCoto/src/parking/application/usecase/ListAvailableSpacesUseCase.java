@@ -1,22 +1,16 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package parking.application.usecase;
+
 import parking.domain.model.ParkingSpace;
 import parking.domain.model.SpaceType;
 import parking.domain.repository.ParkingSpaceRepository;
-import java.util.List;
-import java.util.List;
 
-/**
- *
- * @author Laboratorio_M
- */
-
+import java.util.List;
 
 /**
  * Lists every currently available space of a given type.
+ * 
+ * @author Keilor MC
+ * @author Randall AC
  */
 public class ListAvailableSpacesUseCase {
 
@@ -37,4 +31,3 @@ public class ListAvailableSpacesUseCase {
         return spaceRepository.findAvailableByType(type);
     }
 }
-

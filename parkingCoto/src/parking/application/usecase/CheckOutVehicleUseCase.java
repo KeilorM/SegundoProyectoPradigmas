@@ -1,26 +1,17 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package parking.application.usecase;
+
 import parking.domain.exception.TicketNotActiveException;
 import parking.domain.model.ParkingTicket;
 import parking.domain.repository.ParkingTicketRepository;
 
 import java.time.LocalDateTime;
 
-import java.time.LocalDateTime;
-
-/**
- *
- * @author Laboratorio_M
- */
-
-
-
 /**
  * Checks a vehicle out of the parking lot: closes its active ticket
  * (which computes the final amount) and releases the space it occupied.
+ * 
+ * @author Keilor MC
+ * @author Randall AC
  */
 public class CheckOutVehicleUseCase {
 
@@ -50,4 +41,3 @@ public class CheckOutVehicleUseCase {
         return ticket;
     }
 }
-

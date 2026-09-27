@@ -1,18 +1,13 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package parking.application.usecase;
+
 import parking.domain.model.Payment;
 import parking.domain.repository.PaymentRepository;
-/**
- *
- * @author Laboratorio_M
- */
-
 
 /**
  * Computes the total revenue collected across every registered payment.
+ * 
+ * @author Keilor MC
+ * @author Randall AC
  */
 public class GetTotalRevenueUseCase {
 
@@ -34,4 +29,3 @@ public class GetTotalRevenueUseCase {
                 .sum();
     }
 }
-

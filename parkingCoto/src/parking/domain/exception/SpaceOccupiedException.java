@@ -1,17 +1,11 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package parking.domain.exception;
-
-/**
- *
- * @author Laboratorio_M
- */
 
 /**
  * Thrown when attempting to assign a space that is already
  * {@code OCCUPIED} by another vehicle.
+ * 
+ * @author Keilor MC
+ * @author Randall AC
  */
 public class SpaceOccupiedException extends SpaceNotAvailableException {
 
@@ -26,4 +20,3 @@ public class SpaceOccupiedException extends SpaceNotAvailableException {
         super("Space " + number + " is already occupied");
     }
 }
-

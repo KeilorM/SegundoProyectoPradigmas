@@ -1,8 +1,5 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package parking.application.usecase;
+
 import parking.domain.model.ParkingSpace;
 import parking.domain.model.SpaceStatus;
 import parking.domain.model.SpaceType;
@@ -11,17 +8,12 @@ import parking.domain.repository.ParkingSpaceRepository;
 import java.util.EnumMap;
 import java.util.Map;
 
-import java.util.EnumMap;
-import java.util.Map;
-/**
- *
- * @author Laboratorio_M
- */
-
-
 /**
  * Computes how many spaces of each type are available, occupied, and
  * out of service.
+ * 
+ * @author Keilor MC
+ * @author Randall AC
  */
 public class GetOccupancyByTypeUseCase {
 
@@ -45,13 +37,16 @@ public class GetOccupancyByTypeUseCase {
 
         for (SpaceType type : SpaceType.values()) {
             long available = allSpaces.stream()
-                    .filter(s -> s.getType() == type && s.getStatus() == SpaceStatus.AVAILABLE)
+                    .filter(s -> s.getType() == type && s.getStatus() 
+                            == SpaceStatus.AVAILABLE)
                     .count();
             long occupied = allSpaces.stream()
-                    .filter(s -> s.getType() == type && s.getStatus() == SpaceStatus.OCCUPIED)
+                    .filter(s -> s.getType() == type && s.getStatus() 
+                            == SpaceStatus.OCCUPIED)
                     .count();
             long outOfService = allSpaces.stream()
-                    .filter(s -> s.getType() == type && s.getStatus() == SpaceStatus.OUT_OF_SERVICE)
+                    .filter(s -> s.getType() == type && s.getStatus() 
+                            == SpaceStatus.OUT_OF_SERVICE)
                     .count();
             result.put(type, new long[]{available, occupied, outOfService});
         }

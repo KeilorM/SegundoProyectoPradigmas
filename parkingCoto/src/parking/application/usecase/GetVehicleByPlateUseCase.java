@@ -1,18 +1,9 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package parking.application.usecase;
+
 import parking.domain.model.Vehicle;
 import parking.domain.repository.VehicleRepository;
-import java.util.Optional;
-import java.util.Optional;
 
-/**
- *
- * @author Laboratorio_M
- */
-
+import java.util.Optional;
 
 /**
  * Looks up a registered vehicle by its plate.
@@ -21,6 +12,9 @@ import java.util.Optional;
  * have the plate typed by the user and need the actual {@link Vehicle}
  * instance to pass into other use cases like
  * {@link CheckInVehicleUseCase}.
+ * 
+ * @author Keilor MC
+ * @author Randall AC
  */
 public class GetVehicleByPlateUseCase {
 
@@ -35,10 +29,10 @@ public class GetVehicleByPlateUseCase {
 
     /**
      * @param plate the plate to search for
-     * @return the matching vehicle, or {@link Optional#empty()} if none is registered
+     * @return the matching vehicle, or {@link Optional#empty()} 
+     * if none is registered
      */
     public Optional<Vehicle> execute(String plate) {
         return vehicleRepository.findByPlate(plate);
     }
 }
-

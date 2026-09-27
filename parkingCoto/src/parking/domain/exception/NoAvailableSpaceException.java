@@ -1,18 +1,13 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package parking.domain.exception;
-import parking.domain.model.SpaceType;
 
-/**
- *
- * @author Laboratorio_M
- */
+import parking.domain.model.SpaceType;
 
 /**
  * Thrown when there is no available, compatible space to assign to an
  * entering vehicle.
+ * 
+ * @author Keilor MC
+ * @author Randall AC
  */
 public class NoAvailableSpaceException extends BusinessException {
 
@@ -25,4 +20,3 @@ public class NoAvailableSpaceException extends BusinessException {
         super("No available spaces for type " + type);
     }
 }
-

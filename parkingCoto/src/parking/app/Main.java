@@ -1,15 +1,6 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
-package parkingcoto;
-import java.util.Scanner;
-import java.util.Scanner;
+package parking.app;
 
-/**
- *
- * @author Laboratorio_M
- */
+import java.util.Scanner;
 
 /**
  * Entry point of the console application. Wires a fresh
@@ -22,6 +13,9 @@ import java.util.Scanner;
  * For a non-interactive, scripted walkthrough of the same operations
  * (useful for quickly generating sample output for the report), see
  * {@link Demo}. The 15 mandatory test cases live in {@link ParkingTests}.
+ * 
+ * @author Keilor MC
+ * @author Randall AC
  */
 public class Main {
 
