@@ -1,5 +1,5 @@
 package parking.domain.model;
-
+import java.util.regex.Pattern;
 import java.util.Objects;
 
 /**
@@ -22,7 +22,7 @@ import java.util.Objects;
  * @author Randall AC
  */
 public abstract class Vehicle {
-
+    private static final Pattern COLOR_PATTERN = Pattern.compile("^[\\p{L}\\s]+$");    
     private final String plate;
     private final String brand;
     private final String model;
@@ -42,10 +42,13 @@ public abstract class Vehicle {
         if (plate == null || plate.isBlank()) {
             throw new IllegalArgumentException("The plate is required");
         }
+        if (color == null || color.isBlank() || !COLOR_PATTERN.matcher(color.trim()).matches()) {
+            throw new IllegalArgumentException("The color must contain letters only, no numbers");
+        }
         this.plate = plate.trim().toUpperCase();
         this.brand = brand;
         this.model = model;
-        this.color = color;
+        this.color = color.trim();
     }
 
     /**
