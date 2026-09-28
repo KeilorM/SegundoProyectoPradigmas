@@ -84,6 +84,8 @@ public class ConsoleMenu {
             } catch (NumberFormatException e) {
                 System.out.println("That doesn't look like a valid number. "
                         + "Try again.");
+            } catch (IllegalArgumentException e) {
+                System.out.println("Invalid data: " + e.getMessage());
             }
             System.out.println();
         }
