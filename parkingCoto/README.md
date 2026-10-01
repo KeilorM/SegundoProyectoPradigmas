@@ -1,6 +1,6 @@
 # Parking Coto — Private Parking Lot Management System
 
-Project 2 · EIF400 Programming Paradigms
+Project 2 · EIF400 Paradigmas de Programación
 
 **Opening this in NetBeans:** this is a standard Maven project
 (it has a pom.xml inside the parkingSystem folder). Use **File > Open Project**
