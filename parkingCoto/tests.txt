@@ -1,0 +1,14 @@
+C:\Users\Laboratorio_M\Documents\NetBeansProjects\SegundoProyectoPradigmas\parkingCoto\test\parking\application\usecase\CheckInVehicleUseCaseTest.java
+C:\Users\Laboratorio_M\Documents\NetBeansProjects\SegundoProyectoPradigmas\parkingCoto\test\parking\application\usecase\CheckOutVehicleUseCaseTest.java
+C:\Users\Laboratorio_M\Documents\NetBeansProjects\SegundoProyectoPradigmas\parkingCoto\test\parking\application\usecase\QueryUseCasesTest.java
+C:\Users\Laboratorio_M\Documents\NetBeansProjects\SegundoProyectoPradigmas\parkingCoto\test\parking\application\usecase\RegisterPaymentUseCaseTest.java
+C:\Users\Laboratorio_M\Documents\NetBeansProjects\SegundoProyectoPradigmas\parkingCoto\test\parking\application\usecase\RegisterUseCasesTest.java
+C:\Users\Laboratorio_M\Documents\NetBeansProjects\SegundoProyectoPradigmas\parkingCoto\test\parking\application\usecase\UseCaseFixture.java
+C:\Users\Laboratorio_M\Documents\NetBeansProjects\SegundoProyectoPradigmas\parkingCoto\test\parking\application\usecase\ValidateSpaceAssignmentUseCaseTest.java
+C:\Users\Laboratorio_M\Documents\NetBeansProjects\SegundoProyectoPradigmas\parkingCoto\test\parking\domain\model\HourlyRateTest.java
+C:\Users\Laboratorio_M\Documents\NetBeansProjects\SegundoProyectoPradigmas\parkingCoto\test\parking\domain\model\ParkingSpaceTest.java
+C:\Users\Laboratorio_M\Documents\NetBeansProjects\SegundoProyectoPradigmas\parkingCoto\test\parking\domain\model\ParkingTicketTest.java
+C:\Users\Laboratorio_M\Documents\NetBeansProjects\SegundoProyectoPradigmas\parkingCoto\test\parking\domain\model\RateWithDailyCapTest.java
+C:\Users\Laboratorio_M\Documents\NetBeansProjects\SegundoProyectoPradigmas\parkingCoto\test\parking\domain\model\TimeUtilTest.java
+C:\Users\Laboratorio_M\Documents\NetBeansProjects\SegundoProyectoPradigmas\parkingCoto\test\parking\domain\model\VehicleTest.java
+C:\Users\Laboratorio_M\Documents\NetBeansProjects\SegundoProyectoPradigmas\parkingCoto\test\parking\infrastructure\repository\InMemoryRepositoriesTest.java
